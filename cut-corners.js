@@ -59,6 +59,7 @@ const floor = (n) => {
     return count
 }
 
+
 const trunc = (n) => {
     let count = 0
     let newn = n * 100

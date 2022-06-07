@@ -62,12 +62,18 @@ const floor = (n) => {
 const trunc = (n) => {
     let count = 0
     let newn = n * 100
+    if (n > 0xfffffffff) {
+        let a = n - 0xfffffffff
+        for (let i = a; i > 100; i -= 100) {
+            count++
+        }
+        return count + 0xfffffffff
+    }
     if (n < 0) {
         newn = -newn
     }
     for (let i = newn; i > 100; i -= 100) {
         count++
-        console.log(count)
     }
     if (n < 0) {
         count = -count

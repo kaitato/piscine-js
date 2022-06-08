@@ -1,15 +1,18 @@
 const split = (str,sep) => {
     let arr = []
     let newstr = ""
-    let i = 0
-    while (i < str.length) {
-        if (str[i] === sep) {
-            arr.push(newstr)
+    for (let i = 0 ; i < str.length ; i++) {
+        if (str[0] === sep[0]) {
+            arr.push("")
+            arr.push(sep)
             i++
         }
-        newstr += str[i]
-        i++
+        if (str[i] !== sep[0]) {
+            newstr += str[i]
+        }
+        if (str[i] === sep[0]) {
+            arr.push(newstr)
+        }
     }
-    console.log(arr)
     return arr
 }

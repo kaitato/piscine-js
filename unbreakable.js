@@ -12,6 +12,10 @@ const split = (str,sep) => {
         }
         if (str[i] === sep[0]) {
             arr.push(newstr)
+            
+        }
+        if (str[i] === str[str.length -1] && str[i] === sep[sep.length -1]) {
+            arr.push("")
         }
     }
     return arr

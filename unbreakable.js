@@ -2,7 +2,7 @@ const split = (str,sep) => {
     let arr = []
     for (let i = 0 ; i < str.length ; i++) {
         let newstr = ""
-        if (str[0] === sep[0]) {
+        if (str[i] === sep[0]) {
             arr.push("")
             arr.push(sep)
             i++

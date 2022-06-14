@@ -10,5 +10,3 @@ const vowelDots = (str) => {
 
     return str
 }
-
-console.log(vowelDots("hello"))

@@ -21,5 +21,5 @@ export const getActive = () => {
 export const getBonannoPisano = () => {
     let arr1 = Array.from(document.querySelectorAll('#BonannoPisano'))
     let arr2 = Array.from(document.querySelectorAll('a.classical.active:not(#BonannoPisano)'))
-    return arr1.concat(arr2)
+    return arr1.concat([arr2])
 }

@@ -8,7 +8,7 @@ export const getArchitects = () => {
 
 export const getClassical = () => {
     let arr1 = Array.from(document.querySelectorAll('a.classical'))
-    let arr2 = Array.from(document.querySelectorAll('a:not(.classical)'))
+    let arr2 = Array.from(document.querySelectorAll('classical:not(.a)'))
     return [arr1].concat([arr2])
 }
 

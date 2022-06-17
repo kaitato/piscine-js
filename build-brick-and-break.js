@@ -1,35 +1,42 @@
-export const build = (x) => {
+export function build(x){
     let i = 1
-    let m = 2
-    let a = setInterval(function(){
-        let elem = document.createElement('div')
-        elem.id = 'brick-'+i
-        document.body.appendChild(elem)
-        if (i==m) {
-            document.getElementById(elem.id).setAttribute('data-foundation', "true");
-            m += 3
-        } else if (i == x) {
-            clearInterval(a)
+    let block = ''
+    let counterFoundation = 2
+    let interval = setInterval(function(){
+        block = document.createElement('div')
+        document.body.append(block)
+        block.innerHTML = i
+        block.id = 'brick-'+i
+        ++i
+        if(counterFoundation === 3){
+        block.dataset.foundation = true
+        counterFoundation = 0
         }
-        i++
-    },100)
+        ++counterFoundation
+        console.log(block)
+        if(i===x+1){
+            clearInterval(interval)
+        }
+    },100,i)
+    return block
 }
-
-export const repair = (...arr) => {
-    for (let i = 0 ; i < arr.length ; i++) {
-        let elem = document.getElementById(arr[i])
-        let n = repairs[i].replace('brick-','')
-        if (n % 3 === 2) {
-            elem.setAttribute('data-repaired', "in progress")
+export function repair(...repairs){
+    for (let i = 0; i < repairs.length; i++) {
+        let elem = document.getElementById(repairs[i])
+        // console.log(elem.getAttribute("foundation"))
+        let n = repairs[i].replace('brick-', '')
+        if(n%3===2){
+            elem.setAttribute('data-repaired',"in progress")
             elem.innerHTML = n
-        } else {
-            elem.setAttribute('data-repaired', "true")
+        }else{
+            elem.setAttribute("data-repaired","true")
             elem.innerHTML = n
         }
+        // console.log(Number(repairs[i]))
     }
 }
 
-export const destroy = () => {
+export function destroy(){
     let elements = document.querySelectorAll('div[id^="brick"]')
     elements[elements.length-1].remove()
 }

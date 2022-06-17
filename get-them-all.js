@@ -14,7 +14,7 @@ export const getClassical = () => {
 
 export const getActive = () => {
     let arr1 = Array.from(document.getElementsByClassName('classical active'))
-    let arr2 = Array.from(document.querySelectorAll('.active:not(.classical)'))
+    let arr2 = Array.from(document.querySelectorAll('.classical:not(.active)'))
     return [arr1].concat([arr2])
 }
 

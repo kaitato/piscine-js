@@ -15,6 +15,21 @@ export const build = (x) => {
     },100)
 }
 
-export const repair = () => {}
+export const repair = (...arr) => {
+    for (let i = 0 ; i < arr.length ; i++) {
+        let elem = document.getElementById(arr[i])
+        let n = repairs[i].replace('brick-','')
+        if (n % 3 === 2) {
+            elem.setAttribute('data-repaired', "in progress")
+            elem.innerHTML = n
+        } else {
+            elem.setAttribute('data-repaired', "true")
+            elem.innerHTML = n
+        }
+    }
+}
 
-export const destroy = () => {}
+export const destroy = () => {
+    let elements = document.querySelectorAll('div[id^="brick"]')
+    elements[elements.length-1].remove()
+}

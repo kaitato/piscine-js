@@ -6,6 +6,7 @@ export function generateClasses(){
         style.innerHTML +=  '.' + colors[i] + '{background:' + colors[i] + ';}'
     }
     document.getElementsByTagName('head')[0].appendChild(style);
+
 }
 export function generateColdShades(){
     let view = ['aqua', 'blue', 'turquoise', 'green', 'cyan', 'navy', 'purple']
@@ -15,6 +16,7 @@ export function generateColdShades(){
             let bol = colors[i].match(Regex)
             if(bol !== null){
                 let div = document.createElement('div')
+                // document.head.classList.add(colors[i])
                 div.className = colors[i]
                 div.textContent = colors[i]
                 document.body.append(div)
@@ -32,4 +34,5 @@ export function choseShade(d){
             elem[i].classList.add(d)
         } 
     }
+    
 }

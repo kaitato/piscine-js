@@ -1,7 +1,7 @@
 const invert = (ob) => {
     let ret = {};
     for(let key in ob){
-        if (ob.hasOwnProperty(k)) {
+        if (ob.hasOwnProperty(key)) {
             ret[ob[key]] = key;
         }
     }

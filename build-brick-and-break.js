@@ -20,12 +20,7 @@ export function build(x){
     },100,i)
     return block
 }
-<<<<<<< HEAD
-
-export const repair = (...arr) => {
-=======
 export function repair(...repairs){
->>>>>>> 9a9cf59dd84d4ef544564c5fab5c2539ad4e57ed
     for (let i = 0; i < repairs.length; i++) {
         let elem = document.getElementById(repairs[i])
         // console.log(elem.getAttribute("foundation"))

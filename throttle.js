@@ -1,5 +1,5 @@
 const throttle = (f, delay) => {
 }
   
-  const opThrottle = (f, delay, options = {}) => {
+const opThrottle = (f, delay, options = {}) => {
 }

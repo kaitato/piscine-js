@@ -7,9 +7,6 @@ const pyramid = (char,depth) => {
         for (let p = 0; p < (2 * i) + 1; p++) {
             result += char
         }
-        for (let b = i; b < depth; b++) {
-            result += " "
-        }
         if (i !== depth - 1) {
             result += "\n"
         }

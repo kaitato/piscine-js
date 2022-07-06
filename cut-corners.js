@@ -25,23 +25,27 @@ const round = (n) => {
     return count
 }
 
-const ceil = (n) => {
-    let count = 0
-    let newn = n * 100
-    if (n === 0) {
-        return n
+function ceil(value) {
+    if (value === 0) {
+        return value
     }
-    if (n < 0) {
-        newn = -newn
+    if (value === 0) {
+        return value
     }
-    for (let i = newn; i > 100; i -= 100) {
-        count++
+
+    let newVal = value * 100
+    let counter = 0
+    if (value > 0) {
+        for (let a = newVal; a > 100; a -= 100) {
+            counter++
+        }
+        return counter + 1
+    } else if (value < 0) {
+        for (let a = newVal; a < -100; a += 100) {
+            counter--
+        }
     }
-    count++
-    if (n < 0) {
-        count = -count + 1
-    }
-    return count 
+        return counter--
 }
 
 const floor = (n) => {

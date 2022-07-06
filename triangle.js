@@ -8,6 +8,5 @@ const triangle = (char,depth) => {
             result += "\n"
         }
     }
-
     return result
 }

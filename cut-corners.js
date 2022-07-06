@@ -64,25 +64,59 @@ const floor = (n) => {
 }
 
 
-const trunc = (n) => {
-    let count = 0
-    let newn = n * 100
-    if (n > 0xfffffffff) {
-        let a = n - 0xfffffffff
-        for (let i = a; i > 100; i -= 100) {
-            count++
-        }
-        return count + 0xfffffffff
+function trunc(value) {
+    let counter = 0
+    if (value > 0xfffffffff) {
+        value -= 0xfffffffff;
+        return trun(value) + 0xfffffffff;
+    } else {
+        return trun(value);
     }
-    if (n < 0) {
-        newn = -newn
-    }
-    for (let i = newn; i > 100; i -= 100) {
-        count++
-    }
-    if (n < 0) {
-        count = -count
-    }
-    return count
 }
-//one more pls
+function trun(value) {
+    let m = modulo(value, 1);
+    if (m !== 0) {
+        return value - m;
+    } else {
+        return value;
+    }
+}
+function modulo(a, b) {
+    let result = 0
+    if (b === 0) {
+        return
+    }
+    if (b > a) {
+         result = a
+    }
+    if (a > 0 && b > 0) {
+        for (let i = a; i > 0; i -= b) {
+            result = i
+            if (b === result) {
+                result = 0
+            }
+        }
+    }
+    if (a > 0 && b < 0) {
+        for (let i = a; i > 0; i += b) {
+            result = i
+            if (b === result) {
+                result = 0
+            }
+        }
+    }
+    if (a < 0 && b > 0) {
+        for (let i = a; i < 0; i += b) {
+            result = i
+        }
+    }
+    if (a < 0 && b < 0) {
+        for (let i = a; i < 0; i -= b) {
+            result = i
+            if (b === result) {
+                result = 0
+            }
+        }
+    }
+    return result
+}

@@ -1,14 +1,14 @@
 const pyramid = (char,depth) => {
     let result = ""
     for (let i = 0; i < depth; i++) {
-        for (let a = 0; i < depth; a++) {
-            result += ' '
+        for (let a = i; a < depth; a++) {
+            result += " "
         }
         for (let p = 0; p < (2 * i) + 1; p++) {
             result += char
         }
-        for (let b = 0; i < depth; b++) {
-            result += ' '
+        for (let b = i; b < depth; b++) {
+            result += " "
         }
         if (i !== depth - 1) {
             result += "\n"

@@ -4,8 +4,10 @@ const triangle = (char,depth) => {
         for (let a = 0; a < i + 1; a++) {
             result += char
         }
-        result += "\n"
+        if (i !== depth - 1) {
+            result += "\n"
+        }
     }
-    result += "\n"
+
     return result
 }

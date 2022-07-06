@@ -10,6 +10,9 @@ function nasa(n) {
         } else {
             res += a + ' '
         }
+        if (a !== n) {
+            res += ' '
+        }
     }
     return res
 }

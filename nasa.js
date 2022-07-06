@@ -2,13 +2,13 @@ function nasa(n) {
     let res = ""
     for (let a = 1; a < n + 1; a++) {
         if ((a % 3 === 0) && (a % 5 === 0)) {
-            res += 'NASA' + ' '
+            res += 'NASA'
         } else if (a % 3 === 0) {
-            res += 'NA' + ' '
+            res += 'NA'
         } else if (a % 5 === 0) {
-            res += 'SA' + ' '
+            res += 'SA'
         } else {
-            res += a + ' '
+            res += a
         }
         if (a !== n) {
             res += ' '

@@ -5,7 +5,6 @@ function matchCron (cron,date){
     let dayOfMonth = arr[2]
     let month = arr[3]
     let dayWeek = arr[4]
-    // console.log(date.getDay()+1)
     let flag = false
     if(minute === '*' || minute == date.getMinutes()){
         flag = true

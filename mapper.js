@@ -1,25 +1,24 @@
-function map(arr,func){
-    let res = []
-    let i = 0
-    while(i < arr.length){
-        let  ina = 0
-        ina = func(arr[i],i,arr)
-        res.push(ina)
-        i++
+function map(arr, func) {
+    let res = [];
+    let i = 0;
+    while (i < arr.length) {
+        let a = func(arr[i], i, arr);
+        res.push(a);
+        i++;
     }
-    return res
+    return res;
 }
-function flatMap(arr, fun){
-    let res = []
-    let mapres = map(arr,fun)
+function flatMap(arr, fun) {
+    let res = [];
+    let mapres = map(arr, fun);
     for (let map of mapres) {
         if (Array.isArray(map)) {
             for (let m of map) {
-                res.push(m)
+                res.push(m);
             }
         } else {
-            res.push(map)
+            res.push(map);
         }
     }
-    return res
-}   
+    return res;
+}

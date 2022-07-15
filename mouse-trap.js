@@ -2,9 +2,9 @@ let box;
 let x;
 let y;
 let flag = true;
+let elem = document.createElement("div");
 export function createCircle() {
     addEventListener("click", function () {
-        let elem = document.createElement("div");
         elem.className = "circle";
         elem.style.left = x;
         elem.style.top = y;
@@ -24,7 +24,6 @@ export function moveCircle() {
         });
         x = e.clientX - 25 + "px";
         y = e.clientY - 25 + "px";
-        let elem = document.createElement("div");
         elem.className = "circle";
         elem.classList.add("circleRem");
         if (flag) {

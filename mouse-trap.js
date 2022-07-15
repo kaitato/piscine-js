@@ -1,12 +1,14 @@
+let x;
+let y;
 let flag = true;
 export const createCircle = () => {
     document.addEventListener(
         "click",
-        (e) => {
+        () => {
             let elem = document.createElement("div");
             elem.className = "circle";
-            elem.style.left = e.clientX - 25 + "px";
-            elem.style.top = e.clientY - 25 + "px";
+            elem.style.left = x;
+            elem.style.top = y;
             if (flag) {
                 elem.style.background = "white";
             } else {
@@ -25,13 +27,15 @@ export const moveCircle = () => {
             document.querySelectorAll(".circleRem").forEach((el) => {
                 el.remove();
             });
+            x = e.clientX - 25 + "px";
+            y = e.clientY - 25 + "px";
             let elem = document.createElement("div");
             elem.className = "circle";
             elem.classList.add("circleRem");
             if (flag) elem.style.background = "white";
             else elem.style.background = "var(--purple)";
-            elem.style.left = e.clientX - 25 + "px";
-            elem.style.top = e.clientY - 25 + "px";
+            elem.style.left = x;
+            elem.style.top = y;
             document.body.appendChild(elem);
             if (
                 e.clientX >= box.getBoundingClientRect().left + 25 &&

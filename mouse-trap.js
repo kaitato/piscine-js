@@ -16,9 +16,9 @@ export function createCircle() {
         document.body.appendChild(elem);
         flag = true;
     });
-};
+}
 export function moveCircle() {
-    addEventListener("mousemove", e => {
+    addEventListener("mousemove", (e) => {
         document.querySelectorAll(".circleRem").forEach((el) => {
             el.remove();
         });
@@ -49,31 +49,30 @@ export function moveCircle() {
             if (e.clientX - 25 < box.getBoundingClientRect().left) {
                 circle.style.left = box.getBoundingClientRect().left + "px";
                 document.querySelector(".circle").style.background =
-                "var(--purple)";
+                    "var(--purple)";
             }
             if (e.clientX + 25 > box.getBoundingClientRect().right) {
                 circle.style.left =
                     box.getBoundingClientRect().right - 50 + "px";
-                    document.querySelector(".circle").style.background =
-                "var(--purple)";
+                document.querySelector(".circle").style.background =
+                    "var(--purple)";
             }
             if (e.clientY - 25 < box.getBoundingClientRect().top) {
                 circle.style.top = box.getBoundingClientRect().top + "px";
                 document.querySelector(".circle").style.background =
-                "var(--purple)";
+                    "var(--purple)";
             }
             if (e.clientY + 25 > box.getBoundingClientRect().bottom) {
                 circle.style.top =
                     box.getBoundingClientRect().bottom - 50 + "px";
-                    document.querySelector(".circle").style.background =
-                "var(--purple)";
+                document.querySelector(".circle").style.background =
+                    "var(--purple)";
             }
-            
         }
     });
-};
+}
 export function setBox() {
     box = document.createElement("div");
     box.className = "box";
     document.body.appendChild(box);
-};
+}

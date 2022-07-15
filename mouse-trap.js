@@ -47,27 +47,19 @@ export function moveCircle() {
         }
         if (!flag) {
             if (e.clientX - 25 < box.getBoundingClientRect().left) {
-                circle.style.left = box.getBoundingClientRect().left + "px";
-                document.querySelector(".circle").style.background =
-                    "var(--purple)";
+                elem.style.left = box.getBoundingClientRect().left + "px";
             }
             if (e.clientX + 25 > box.getBoundingClientRect().right) {
-                circle.style.left =
-                    box.getBoundingClientRect().right - 50 + "px";
-                document.querySelector(".circle").style.background =
-                    "var(--purple)";
+                elem.style.left = box.getBoundingClientRect().right - 50 + "px";
             }
             if (e.clientY - 25 < box.getBoundingClientRect().top) {
-                circle.style.top = box.getBoundingClientRect().top + "px";
-                document.querySelector(".circle").style.background =
-                    "var(--purple)";
+                elem.style.top = box.getBoundingClientRect().top + "px";
             }
             if (e.clientY + 25 > box.getBoundingClientRect().bottom) {
-                circle.style.top =
-                    box.getBoundingClientRect().bottom - 50 + "px";
-                document.querySelector(".circle").style.background =
-                    "var(--purple)";
+                elem.style.top = box.getBoundingClientRect().bottom - 50 + "px";
             }
+            document.querySelector(".circle").style.background =
+                "var(--purple)";
         }
     });
 }

@@ -1,7 +1,7 @@
 import { styles } from "./pimp-my-style.data.js";
 
 export const pimp = (e) => {
-    let b = e.querySelector("button");
+    let b = e.srcElement;
     if (b.classList.contains("unpimp")) {
         let classes = Array.from(b.classList);
         b.classList.remove(classes[classes.length - 2]);

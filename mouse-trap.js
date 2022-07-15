@@ -1,3 +1,4 @@
+let box
 let x;
 let y;
 let flag = true;
@@ -68,7 +69,7 @@ export const moveCircle = () => {
     );
 };
 export const setBox = () => {
-    let elem = document.createElement("div");
-    elem.className = "box";
-    document.body.appendChild(elem);
+    box = document.createElement("div");
+    box.className = "box";
+    document.body.appendChild(box);
 };

@@ -17,7 +17,6 @@ export const createCircle = () => {
             document.body.appendChild(elem);
             flag = true;
         },
-        false
     );
 };
 export const moveCircle = () => {
@@ -66,7 +65,6 @@ export const moveCircle = () => {
                     "var(--purple)";
             }
         },
-        false
     );
 };
 export const setBox = () => {

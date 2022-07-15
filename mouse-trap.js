@@ -2,7 +2,7 @@ let box;
 let x;
 let y;
 let flag = true;
-export const createCircle = () => {
+export function createCircle() {
     addEventListener("click", function () {
         let elem = document.createElement("div");
         elem.className = "circle";
@@ -17,7 +17,7 @@ export const createCircle = () => {
         flag = true;
     });
 };
-export const moveCircle = () => {
+export function moveCircle() {
     addEventListener("mousemove", (e) => {
         document.querySelectorAll(".circleRem").forEach((el) => {
             el.remove();
@@ -65,7 +65,7 @@ export const moveCircle = () => {
         }
     });
 };
-export const setBox = () => {
+export function setBox() {
     box = document.createElement("div");
     box.className = "box";
     document.body.appendChild(box);

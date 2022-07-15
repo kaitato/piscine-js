@@ -27,8 +27,11 @@ export const moveCircle = () => {
         let elem = document.createElement("div");
         elem.className = "circle";
         elem.classList.add("circleRem");
-        if (flag) elem.style.background = "white";
-        else elem.style.background = "var(--purple)";
+        if (flag) {
+            elem.style.background = "white";
+        } else {
+            elem.style.background = "var(--purple)";
+        }
         elem.style.left = x;
         elem.style.top = y;
         document.body.appendChild(elem);

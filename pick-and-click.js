@@ -77,10 +77,10 @@ export function pick() {
         document.body.appendChild(luminosity);
     });
     addEventListener("click", (e) => {
-        let val = document.getElementsByClassName("hsl")[0].innerHTML;
+        let value = document.getElementsByClassName("hsl")[0].innerHTML;
         let input = document.createElement("input");
         document.body.appendChild(input);
-        input.value = val;
+        input.value = value;
         input.select();
         document.execCommand("copy");
         document.body.removeChild(input);
